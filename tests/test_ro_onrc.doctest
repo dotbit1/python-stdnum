@@ -26,6 +26,8 @@ This file contains more detailed doctests for the stdnum.ro.onrc module.
 
 Test some corner cases.
 
+>>> onrc.validate('J2012000750528')
+'J2012000750528'
 >>> onrc.validate('J/52/750/2012')
 'J52/750/2012'
 >>> onrc.validate('J52/750/22.11.2012')  # valid, strip date, leave year
@@ -268,6 +270,10 @@ These have been found online and should all be valid numbers.
 ... j30/61/2010
 ... j39/151/2019
 ... j40/3674/2002
+... J1991000904401
+... J2025022901007
+... J2007007766403
+... J2012000750528
 ...
 ... '''
 >>> [x for x in numbers.splitlines() if x and not onrc.is_valid(x)]
